@@ -1,0 +1,177 @@
+/* *{
+  전체 선택자  모든요소 선택 
+}
+
+div{
+  태그 선택자 태그이름 요소선택
+}
+
+.class{
+  클래스 선택자 class속성의 값이 class인 요소 선택 
+}
+
+#id{
+  아이디 선택자 id속성의 값이 id인 요소 선택 
+}
+
+div.class{
+  일치 선택자 선택자 A와 선택자 B 를 동시에 만족하는 요소 선택 
+}
+
+div > .class{
+  자식 선택자 선택자 A의 자식요소 B 선택 
+}
+
+div .class{
+  하위(후손) 선택자 선택자 A의 하위요소 B선택 "띄어쓰기'가 선택자의 기호 
+}
+
+div + .class{
+  인접 형제 선택자 선택자 A의 다음 형제 요소 B 하나를 선택 
+}
+
+div ~ .class{
+  일반 형제 선택자 선택자 A의 다음 형제 요소 B 모두 선택
+} */
+
+
+
+/* 가상 클래스 선택자 */
+.box,
+.box2,
+.box3{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  transition: 1s;
+}
+
+
+/* :hover 선택자 A요소에 마우스커서가 올라가 있는 동안 선택 */
+.box:hover{
+  width: 300px;
+  background-color: royalblue;
+}
+
+
+/* :active 선택자 A요소에 마우스를 클릭하고 있는 동안 선택 */
+.box2:active{
+  width: 300px;
+  background-color: red;
+}
+
+
+/* :focus 선택자 A요소가 포커스되면 선택*/
+input:focus{
+  background-color: orange;
+}
+
+
+/* 
+A:first-child{
+  선택자 A가 형제 요소 중 첫째라면 선택
+}
+
+A:last-child{
+  선택자 A가 형제 요소중 막내라면 선택
+}
+
+A:nth-child(n){
+  선택자 A가 형제 요소 중 (n)째라면 선택
+}
+
+A:not(B){
+  선택자 B가 아닌 A 요소 선택
+}
+*/
+
+
+/* 가상 요소 선택자 */
+/* 
+A::before{  인라인요소
+  선택자 A요소의 내부 앞에 내용(content)을 삽입   content라는 css 속성을 사용해 삽입
+}
+
+A::after{   인라인요소
+  선택자 A요소의 내부 뒤에 내용(content)을 삽입   content라는 css 속성을 사용해 삽입
+  after cancer 따로 공부
+}
+*/
+
+.box3::before{
+  content: "HI";
+}
+
+.box3::after{
+  content: "bye";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: royalblue;
+}
+
+
+
+/* 속성 선택자 (ATTR)*/
+/* 
+[A]{
+  속성 A를 포함한 요소 선택
+}
+
+[A ="B']{
+  속성 A를 포함하고 값이 "B"인 요소 선택
+}
+*/
+
+[type="text"] {
+  background-color: orange;
+}
+
+[type="password"] {
+  background-color: red;
+}
+
+[data-fruit-name] {
+  color: blue;
+}
+
+
+.parent {
+  width: 300px;
+  height: 200px;
+  background-color: red;
+}
+
+.child {
+  width: 100px;
+  height: inherit;  /* 상속 */
+  background-color: inherit;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+}
+
+
+/* 선택자 우선순위 */
+/* {color: red !important;} !important를 사용하면 우선순위 0번째 */
+
+div {
+  font-size: 70px;
+}
+
+.hello {
+  color: red;
+  font-size: 70px;
+}
+
+#hello {
+  color: blue;
+}
+
+div#hello {
+  color: yellow;
+}
+
+#hello {
+  color: green !important;
+}

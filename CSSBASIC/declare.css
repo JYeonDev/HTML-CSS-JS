@@ -1,0 +1,8 @@
+@import url(basic.css);
+/* @import방식 css @import 규칙으로 css 문서안에서 또 다른 css 문서를 가져와 연결하는 방식 */
+
+
+div {
+  color: red;
+  font-size: 100px;
+}
