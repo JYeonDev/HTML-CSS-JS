@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transform(변환)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <style>
+    body {
+      padding: 100px;
+    }
+    .container {
+      width: 100px;
+      height: 100px;
+      background-color: royalblue;
+      perspective: 250px;
+    }
+    .container .item {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      font-size: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotateX(180`deg);
+      backface-visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">AB</div>
+  </div>
+</body>
+</html>
